@@ -1,5 +1,3 @@
-# Let's start by creating two classes: one called Student and another called Instructor.
-
 class Person
   attr_accessor :name
 
@@ -11,21 +9,21 @@ class Person
 end
 
 class Student < Person
-  def learn
+  def learn   # It worked but it included a nil at the end... perhaps use p instead of puts?
     puts "I get it!"
 end
   def speak
-    puts "Hi, my name is #{name}"
+    puts "Hi, my name is #{@first_name} #{@last_name}"
   end
 end
 
 
 class Instructor < Person
-  def teach
+  def teach   # It worked but it included a nil at the end... perhaps use p instead of puts?
     puts "Everthing in Ruby is an Object"
 end
   def speak
-    puts "Hi, my name is #{name}"
+    puts "Hi, my name is #{@first_name} #{@last_name}"
 
   end
 end
