@@ -9,8 +9,8 @@ class Person
 end
 
 class Student < Person
-  def learn   # It worked but it included a nil at the end... perhaps use p instead of puts?
-    p "I get it!"
+  def learn
+    puts "I get it!"
 end
   def speak
     puts "Hi, my name is #{@first_name} #{@last_name}"
@@ -19,11 +19,13 @@ end
 
 
 class Instructor < Person
-  def teach   # It worked but it included a nil at the end... perhaps use p instead of puts?
+  def teach
     puts "Everthing in Ruby is an Object"
 end
   def speak
-    p "Hi, my name is #{@first_name} #{@last_name}"
+    puts "Hi, my name is #{@first_name} #{@last_name}"
 
   end
 end
+
+# for question 8, it didn't work because learn is defined under Student and teach is defined under instructor
