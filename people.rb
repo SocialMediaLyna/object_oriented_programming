@@ -10,7 +10,7 @@ end
 
 class Student < Person
   def learn   # It worked but it included a nil at the end... perhaps use p instead of puts?
-    puts "I get it!"
+    p "I get it!"
 end
   def speak
     puts "Hi, my name is #{@first_name} #{@last_name}"
@@ -23,7 +23,7 @@ class Instructor < Person
     puts "Everthing in Ruby is an Object"
 end
   def speak
-    puts "Hi, my name is #{@first_name} #{@last_name}"
+    p "Hi, my name is #{@first_name} #{@last_name}"
 
   end
 end
