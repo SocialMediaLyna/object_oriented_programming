@@ -1,5 +1,7 @@
 class Rover
 
+  attr_accessor :x, :y, :direction
+
   def initialize(x, y, direction)
     @x = x
     @y = y
@@ -59,6 +61,39 @@ class Rover
       end
   end
 end
+  puts "Enter the plateau size"
+  size = gets.chomp.split
+  puts size
+  puts "Enter coordinates"
+  coordinates = gets.chomp.split
+  puts coordinates
+  # coordinates = ["1", "2", "N"]
+  x = coordinates[0].to_i
+  y = coordinates[1].to_i
+  direction = coordinates[2]
+  rover1 = Rover.new(x, y, direction)
+  puts "Enter your list of commands"
+  commands = gets.chomp
+  rover1.read_instruction(commands)
+  puts "#{rover1.x} #{rover1.y} #{rover1.direction}"
 
-# State = x, y, direction
-# Behaviour = read instruction, move, turn
+  puts "Enter coordinates"
+  coordinates = gets.chomp.split
+  puts coordinates
+  x = coordinates[0].to_i
+  y = coordinates[1].to_i
+  direction = coordinates[2]
+  rover2 = Rover.new(x, y, direction)
+  puts "Enter your list of commands"
+  commands = gets.chomp.split("")
+  puts commands
+  commands.each do |command|
+    if command == "L"
+        rover2.turn(command)
+    elsif command == "R"
+        rover2.turn(command)
+    elsif command == "M"
+        rover2.move
+    end
+  end
+  puts "#{rover2.x} #{rover2.y} #{rover2.direction}"
